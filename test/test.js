@@ -32,4 +32,13 @@ describe("test the root path", () => {
                 done()
             })
     })
+    test("It should return Xavier were bruh", done => {
+        request(app)
+            .get("/api/contact/" + 8)
+            .then(response => {
+                expect(response.statusCode).toBe(200)
+                expect(response.body.nom).toBe(undefined)
+                done()
+            })
+    })
 })

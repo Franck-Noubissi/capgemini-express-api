@@ -2,7 +2,10 @@
 import express from "express";
 import { contacts } from "./data.js";
 import * as controller from "./controller.js";
-var app = express();
+import bodyParser from "body-parser";
+
+const app = express();
+app.use(bodyParser.json())
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function (req, res) {
