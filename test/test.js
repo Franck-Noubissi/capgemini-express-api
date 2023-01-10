@@ -42,3 +42,15 @@ describe("test the root path", () => {
             })
     })
 })
+
+describe("Should return id key in response ", () => {
+    test("should be return new contact", () => {
+        request(app)
+            .post("/api/createContact")
+            .send({ id: "3", nom: "Zeubi", telephone: "0789567878" })
+            .then((response) => {
+                expect(response.statusCode).toBe(200);
+                expect(response.body.id).toBe("3");
+            });
+    });
+});

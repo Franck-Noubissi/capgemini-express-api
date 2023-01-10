@@ -16,5 +16,7 @@ app.get('/api/contacts', controller.getContacts);
 
 app.get('/api/contact/:id', controller.getContactById)
 
+app.post('/api/createContact', controller.addContact)
+
 //module.exports = app
 export default app
